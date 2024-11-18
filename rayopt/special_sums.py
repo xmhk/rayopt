@@ -254,7 +254,7 @@ def polar_sum(m, center, direction, aspect=1., binsize=None):
         minlength = int(2*np.pi/binsize) + 1
     else:
         raise ValueError("direction needs to be 'radial' or 'azimuthal'")
-    k = (k/binsize).astype(np.int)
+    k = (k/binsize).astype(np.int64)
     r = np.bincount(k.ravel(), m.ravel(), minlength)
     if direction == "radial":
         assert r.shape[0] == minlength, (r.shape, minlength)
