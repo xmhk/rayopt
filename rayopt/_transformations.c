@@ -2121,7 +2121,7 @@ static int axis2tuple(
     if (PyString_Check(axes) && (PyString_Size(axes) == 4)) {
         char *s = PyString_AS_STRING(axes);
 #else
-    if (PyUnicode_Check(axes) && (PyUnicode_GetSize(axes) == 4)) {
+    if (PyUnicode_Check(axes) && (PyUnicode_GetLength(axes) == 4)) {
         char *s = PyBytes_AsString(PyUnicode_AsASCIIString(axes));
 #endif
         int hash = *((int *)s);
